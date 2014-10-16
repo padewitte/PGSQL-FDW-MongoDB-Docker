@@ -8,7 +8,8 @@ To use it :
 
 #####And then connect
 
-    docker run -it --link a-mongodbfw:postgres --rm postgres sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
+    docker run -it --link a-mongodbfw:postgres --rm \
+        postgres sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
 
 At this point you will just have to create the extension and the foreign table before starting querying data. Don't forget that your MongoDB server is not launch in your container. You may use the docker interface of your laptop (172.17.42.1) in the server description step.*
 ###LICENSE
